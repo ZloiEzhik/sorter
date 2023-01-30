@@ -35,13 +35,11 @@ public class Files {
         return arrayStr;
     }
 
-    public static void writeFile(String vFileName, List<String> arSortStrings){
+    public static void writeFile(String vFileName, String vStr) {
         FileWriter nFile = null;
         try {
-            nFile = new FileWriter(vFileName);
-            for(int i = 0; i < arSortStrings.size(); i++) {
-                nFile.write(arSortStrings.get(i)+"\n");
-            }
+            nFile = new FileWriter(vFileName,true);
+            nFile.write(vStr+"\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -54,12 +52,11 @@ public class Files {
         }
 
     }
-
-    public static void writeErrfile(String vFileName, String vErr) {
+    public static void cleanFile(String vFileName) {
         FileWriter nFile = null;
         try {
             nFile = new FileWriter(vFileName);
-            nFile.write(vErr+"\n");
+            nFile.write("");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -72,5 +69,4 @@ public class Files {
         }
 
     }
-
 }

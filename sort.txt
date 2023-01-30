@@ -1,5 +1,3 @@
-
-Balitsky;Igor
-Loginov;Aleksandr
-Loginov;Sergei
-LoginovaAnastasiya
+Balitsky Igor
+Loginov Aleksandr
+Loginov Sergei

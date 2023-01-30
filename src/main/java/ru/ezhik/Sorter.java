@@ -25,24 +25,10 @@ public class Sorter {
                 .sorted()
                 .collect(Collectors.toList());
 
-        colCorrect.stream().forEach(user -> System.out.println(user.surname + " " + user.name));
-
-        List<String> arSortStrings = sortList(arStrings);
-        checkList();
-        Files.writeFile("sort.txt", arSortStrings);
-    }
-
-    public static List<String> sortList(List<String> arStrings) {
-        return arStrings.stream().sorted().collect(Collectors.toList());
-    }
-
-    public static void checkList() {
-
-        try {
-            Files.writeErrfile("errors.txt","Error message");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        Files.cleanFile("sort.txt");
+        Files.cleanFile("error.txt");
+        colCorrect.stream().forEach(user -> Files.writeFile("sort.txt",(user.surname + " " + user.name)));
+        colNotCorrect.stream().forEach(user -> Files.writeFile("error.txt",(user.surname + " " + user.name)));
     }
 
     public static void main(String[] args) {
