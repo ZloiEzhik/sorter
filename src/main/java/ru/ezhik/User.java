@@ -17,7 +17,7 @@ public class User implements Comparable<User> {
 
         this.surname = split.length == 0 ? "" : split[0];
         this.name = split.length == 1 ? "" : split[1];
-        this.isError = this.name == null || this.surname == null || split.length != 2; /* TODO проверить длину имени и фамилии */
+        this.isError = this.name == null || this.surname == null || split.length != 2;
 
     }
 }
